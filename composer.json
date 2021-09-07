@@ -1,0 +1,21 @@
+{
+    "name": "rundum/gitlab-rest",
+    "description": "Gitlab REST Client",
+    "type": "library",
+    "require": {
+        "symfony/http-client": "5.3.*",
+        "symfony/mime": "5.3.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hendrik Pilz",
+            "email": "pilz@rundum.digital"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Rundum\\": "src/"
+        }
+    }    
+}
