@@ -38,14 +38,21 @@ class Client {
 
     public function addGroupMember(string $group, int $memberId, int $accessLevel) {
         return $this->post('/groups/' . $group . '/members', [
-            'user_id' => $memberId,
-            'access_level' => $accessLevel
+                    'user_id' => $memberId,
+                    'access_level' => $accessLevel
         ]);
     }
 
     public function findGroupProject(string $group, string $project) {
         return $this->get('/groups/' . $group . '/projects', [
                     'search' => $project
+        ]);
+    }
+
+    public function getIssues(int $projectId, $page = 1, $perPage = 20) {
+        return $this->get('/projects/' . $projectId . '/issues', [
+                    'page' => $page,
+                    'per_page' => $perPage
         ]);
     }
 
@@ -97,6 +104,13 @@ class Client {
         return $this->get('/namespaces/' . $name);
     }
 
+    public function getProjects($page = 1, $perPage = 20) {
+        return $this->get('/projects', [
+                    'page' => $page,
+                    'per_page' => $perPage
+        ]);
+    }
+
     public function createProject(int $namespaceId, string $path) {
         return $this->post('/projects', [
                     'path' => $path,
@@ -107,7 +121,7 @@ class Client {
 
     public function searchUsers($query) {
         return $this->get('/users', [
-            'search' => $query
+                    'search' => $query
         ]);
     }
 
