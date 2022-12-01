@@ -3,8 +3,8 @@
     "description": "Gitlab REST Client",
     "type": "library",
     "require": {
-        "symfony/http-client": "5.3.*|5.4.*",
-        "symfony/mime": "5.3.*|5.4.*"
+        "symfony/http-client": "5.3.*|5.4.*|6.0.*",
+        "symfony/mime": "5.3.*|5.4.*|6.0.*"
     },
     "license": "MIT",
     "authors": [
